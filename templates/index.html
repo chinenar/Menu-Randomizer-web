@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>It just random food system why ur face look like that?</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1><div class="logo"><img src="{{ url_for('static', filename='logo.png') }}" alt="Logo"></div>
+      Random food for all hopeless "anything" man</h1>
+    <form method="POST" action="/">
+      <div class="input-group">
+        <label>ส่วนผสมที่แพ้ ไม่มี หรือไม่ต้องการ (เว้นว่างถ้าไม่มี):</label><br>
+        <input type="text" name="allergy" placeholder="ใส่ชื่อวัตถุดิบ">
+      </div>
+      <div class="input-group">
+        <label>อาหารของประเทศที่ต้องการ:</label><br>
+        <input type="text" name="cuisine" placeholder="ใส่ชื่อประเทศ (เช่น Italian)">
+      </div>
+      <div class="input-group">
+        <label>ส่วนผสมหลัก:</label><br>
+        <input type="text" name="main_ingredient" placeholder="ใส่วัตถุดิบหลัก">
+      </div>
+      <button type="submit">ค้นหา</button>
+    </form>
+
+    {% if error %}
+      <p class="error">{{ error }}</p>
+    {% endif %}
+  
+    {% if meal %}
+      <div class="result">
+        <h3>ชื่ออาหาร: {{ meal['strMeal'] }}</h3>
+        {% if meal.get('strMealThumb') %}
+        <div class="food"><img src="{{ meal['strMealThumb'] }}" alt="รูปภาพของอาหาร {{ meal['strMeal'] }}" class="meal-image"></div>
+        {% endif %}
+        <p><strong>วัตถุดิบ:</strong></p>
+        <ul>
+          {% for ingredient, measure in ingredients %}
+            <li>{{ ingredient }} - {{ measure }}</li>
+          {% endfor %}
+        </ul>
+        <p><strong>ขั้นตอนการทำ:</strong></p>
+        <p>{{ meal['strInstructions'] }}</p>
+        {% if meal.get('strYoutube') %}
+        <p><a href="{{ meal['strYoutube'] }}" target="_blank">ดูวิธีทำอาหารบน YouTube</a></p>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>

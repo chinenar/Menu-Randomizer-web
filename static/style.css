@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFD580; /* พื้นหลังสีเหลืองส้มเข้ม */
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #FFF9C4; /* สีพื้นหลังกรอบข้อความเหลืองอ่อน */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h1 {
+    color: #FFFFFF; /* ตัวอักษรสีขาว */
+    text-align: center;
+    background-color: #333333; /* แถบหัวข้อสีดำ */
+    padding: 10px;
+    border-radius: 8px;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #FFF9C4; /* สีเหลืองอ่อน */
+}
+
+button {
+    background-color: #FFA500; /* สีเหลืองเข้ม */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #FF8C00; /* สีเหลืองเข้มขึ้น */
+}
+
+.error {
+    color: red;
+    margin-top: 20px;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #FFE4B5; /* สีเหลืองเข้มอ่อน */
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+
+.result h3 {
+    color: #333333; /* ตัวอักษรสีดำ */
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+}
+
+.result-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.result-section div {
+    width: 30%;
+    padding: 10px;
+    background-color: #FFF9C4; /* สีเหลืองอ่อน */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+
+.logo img{
+    display: inline-flex; /* ใช้ flexbox เพื่อจัดตำแหน่ง */
+    align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    gap: 10px; /* เพิ่มระยะห่างระหว่างรูปภาพกับข้อความ */
+    text-align: left; /* ป้องกันข้อความกึ่งกลางถ้าอยู่ใน container */
+    width: 20%; /* กำหนดให้รูปมีความกว้างเป็น 20% ของ container */
+    max-width: 100px; /* จำกัดขนาดสูงสุด */
+    height: auto;
+    vertical-align: middle; /* จัดแนวรูปภาพให้อยู่กลางบรรทัด */
+}
+
+.food {
+    display: flex; /* ใช้ Flexbox */
+    justify-content: center; /* จัดรูปภาพให้อยู่กลางแนวนอน */
+    align-items: center; /* จัดให้อยู่กลางแนวตั้ง (ถ้า container มีความสูงมากพอ) */
+    margin: 20px 0; /* เพิ่มระยะห่างระหว่างรูปภาพกับเนื้อหาอื่น */
+}
+
+.meal-image {
+    max-width: 100%; /* ปรับขนาดรูปให้ไม่ใหญ่เกิน container */
+    height: auto; /* รักษาสัดส่วนของรูป */
+    border-radius: 8px; /* เพิ่มขอบมนเล็กน้อย (ตามต้องการ) */
+}
+
